@@ -5,32 +5,34 @@ import { PageContainer } from '@ant-design/pro-components';
 import { useModel } from '@umijs/max';
 import styles from './index.less';
 
-// import { request } from '@umijs/max';
-// import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client'
 
-// export async function getStaticProps() {
-//   const prisma = new PrismaClient()
-//   const allposts = await prisma.post.findMany()
+import services from '@/services/demo';
 
-//   console.log(allposts);
-//   return {
-//     props : { allposts }
-//   }
-// }
+const { addUser, queryUserList, deleteUser, modifyUser } =
+  services.UserController;
 
+export async function getStaticProps() {
+  const prisma = new PrismaClient();
+  const posts = await prisma.post.findMany();
 
+  return {
+    props: { posts },
+  };
+}
 
 const HomePage: React.FC = () => {
   const { name } = useModel('global');
   return (
     <PageContainer ghost>
       <Layout>
-      <Row>
-        <Typography.Title level={3} className={styles.title}>
-          Testing <strong>API</strong> ！
-        </Typography.Title>
-      </Row>
-    </Layout>
+        <Row>
+          <Typography.Title level={3} className={styles.title}>
+            Testing <strong>API</strong> ！
+          </Typography.Title>
+          
+        </Row>
+      </Layout>
     </PageContainer>
   );
 };
