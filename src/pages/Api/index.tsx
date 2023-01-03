@@ -15,6 +15,7 @@ const { addUser, queryUserList, deleteUser, modifyUser } =
 export async function getStaticProps() {
   const prisma = new PrismaClient();
   const posts = await prisma.post.findMany();
+  console.log(posts);
 
   return {
     props: { posts },
