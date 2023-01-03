@@ -5,13 +5,13 @@ import { PageContainer } from '@ant-design/pro-components';
 import { useModel } from '@umijs/max';
 import styles from './index.less';
 
-import { request } from '@umijs/max';
-import { PrismaClient } from '@prisma/client';
+// import { request } from '@umijs/max';
+// import { PrismaClient } from '@prisma/client';
 
-let prisma: PrismaClient;
-prisma = new PrismaClient();
-const allPosts = prisma.post.findMany({ });
-console.log(allPosts);
+// let prisma: PrismaClient;
+// prisma = new PrismaClient();
+// const allPosts = prisma.post.findMany({ });
+// console.log(allPosts);
 
 
 
@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
       <Layout>
       <Row>
         <Typography.Title level={3} className={styles.title}>
-          欢迎使用 <strong>{name}</strong> ！
+          Testing <strong>API</strong> ！
         </Typography.Title>
       </Row>
     </Layout>
