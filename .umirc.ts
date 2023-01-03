@@ -29,6 +29,11 @@ export default defineConfig({
       path: '/table',
       component: './Table',
     },
+    {
+      name: 'API',
+      path: '/api',
+      component: './Api',
+    },
   ],
   npmClient: 'pnpm',
 });
